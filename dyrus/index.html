@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title -->
+    <title>
+        The Dyrus Flash
+    </title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Autocomplete -->
+    <link href="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.css" rel="stylesheet" />
+    <script src="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- favicon -->
+    
+        <link rel="icon" href="/favicon.png">
+    
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+    <div class="container header-content">
+        <div class="row header-row">
+            <a href="/">
+                <div class="col-md-5 col-xs-5 header-title">
+                    Museum Artifacts
+                </div>
+            </a>
+            <div class="col-md-3 col-xs-3 header-search">
+                <div class="search-icon">
+    <img src="/img/magnify.png" />
+</div>
+<div class="search-bar">
+    <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+</div>
+<script>
+    var urlMap = {
+        "The Insec": "/insec",
+        "The Madlife": "/madlife",
+        "The xPeke": "/xpeke",
+        "The Dyrus Flash": "/dyrus" 
+    }
+    var ac = new autoComplete({
+        selector: '#search',
+        minChars: 2,
+        source: function(term, suggest) {
+            term = term.toLowerCase();
+            var options = Object.keys(urlMap);
+            var matches = [];
+            for (i = 0; i < options.length; i ++) {
+                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
+            }
+            suggest(matches);
+        },
+        onSelect: function(e, term, item) {
+            window.location.href = urlMap[term];
+        }
+    });
+</script>
+
+
+            </div>
+            <a href="/about">
+                <div class="col-md-2 col-xs-2 header-button">
+                    A
+                </div>
+            </a>
+            <a href="/contact">
+                <div class="col-md-2 col-xs-2 header-button">
+                    C
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    
+    <article class="white">
+
+    <div class="post-container container">
+        <div class="row">
+            <div class="info-col col-md-5">
+                <div class="post-title">
+                    The Dyrus Flash
+                </div>
+                <div class="post-subtitle">
+                    The Ultimate Escape
+                </div>
+                <div class="post-player">
+                    Marcus "Dyrus" Hill
+                </div>
+                <hr>
+                <div class="post-content">
+                    <p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+                    </p>
+                    <blockquote>
+                        <div class="post-quote">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </div>
+                        <br>
+                        <div class="post-quote-author">
+                            Marc Merill, Riot Games Cofounder
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="video-col col-md-7">
+                <div class="post-video">
+                    <div class="video-content tab-content">
+                    
+                    
+                        
+                            <div id="video1" class="video tab-pane fade in active">
+                        
+                            <div class="video-container">
+                                <iframe width="854" height="480" src=https://www.youtube.com/embed/1_5yWtmT-_0?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                    
+                        
+                            <div id="video2" class="video tab-pane fade">
+                        
+                            <div class="video-container">
+                                <iframe width="854" height="480" src=https://www.youtube.com/embed/yw-RPm1uOM4?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                    
+                        
+                            <div id="video3" class="video tab-pane fade">
+                        
+                            <div class="video-container">
+                                <iframe width="854" height="480" src=https://www.youtube.com/embed/CqRFXQJ2ghQ?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        
+                    
+                    </div>
+                </div>
+                <div class="post-video-pagination text-center">
+                    <img class="pagination-decor" src="/img/pagination-decor.png" />
+                    <ul class="nav nav-pills"> 
+                        
+                        
+                            
+                                <li class="page-button active">
+                            
+                                <a data-toggle="pill" href="#video1" data-target="#video1, #video1_description">
+                                    1
+                                </a>
+                            </li>
+                            
+                        
+                            
+                                <li class="page-button">
+                            
+                                <a data-toggle="pill" href="#video2" data-target="#video2, #video2_description">
+                                    2
+                                </a>
+                            </li>
+                            
+                        
+                            
+                                <li class="page-button">
+                            
+                                <a data-toggle="pill" href="#video3" data-target="#video3, #video3_description">
+                                    3
+                                </a>
+                            </li>
+                            
+                        
+                    </ul>
+                    <img class="pagination-decor flip-horizontal" src="/img/pagination-decor.png" />
+                    <div class="tab-content">
+                        
+                        
+                            
+                                <div id="video1_description" class="tab-pane fade in active">
+                            
+                            <p>
+                                lhads flasdf laksdfj alsdkjf alsdkfj alsdkjfald kfjalsdk falsdkf jalsdkf jalsdkf jalsdkf jalskdfj alsdkjfalsdk fj lirjghwlirj wlrtwre twer twret wer twer we                            </p>
+                            </div>
+                            
+                        
+                            
+                                <div id="video2_description" class="tab-pane fade">
+                            
+                            <p>
+                                r tiwjrpoi wrpoijtwpreo itwperoi jtwpreoi tjpwirtpwo rtpj wproti wprtioj wpro tweoieugo thu oiur tgogoru hgoiu rtigouhrt igouerth goiue htrgoier ygoeiru yhgoeir yhgeori yhgoeiru hgoeri hgoeri hygoeit hgoieru hgoeiu g                            </p>
+                            </div>
+                            
+                        
+                            
+                                <div id="video3_description" class="tab-pane fade">
+                            
+                            <p>
+                                wij4r03 u5340 53409u5 0349 u509345 090459 3095 0394 u509u09u034u5 3054309u4 50439eothe-54hi-45i9j 5y 093i5 y0i345 y0i345 jy03 iy5 30iy5j30iy5j 30i5yj03 iy5j3 0iy59j3 y509ij34y509ij3450y 3y509 ij3509yi 340i95yj3 50y9ij35 0y9i34j5y093i45 y                            </p>
+                            </div>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center next-button">
+                <a href="/empire">
+                    The Empire
+                     <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;" xml:space="preserve" width="512px" height="512px">
+<path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"/>
+</svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <div class="row footer-row">
+            <div class="col align-self-center">
+                © 2017 Museum Artifacts
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

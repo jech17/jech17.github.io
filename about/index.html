@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title -->
+    <title>
+        About
+    </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Autocomplete -->
+    <link href="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.css" rel="stylesheet" />
+    <script src="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.png">    
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+    <div class="container header-content">
+        <div class="row header-row">
+            <a href="/">
+                <div class="col-md-5 col-xs-5 header-title">
+                    Museum Artifacts
+                </div>
+            </a>
+            <div class="col-md-3 col-xs-3 header-search">
+                <div class="search-icon">
+    <img src="/img/magnify.png" />
+</div>
+<div class="search-bar">
+    <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+</div>
+<script>
+    var urlMap = {
+        "The Insec": "/insec",
+        "The Madlife": "/madlife",
+        "The xPeke": "/xpeke",
+        "The Dyrus Flash": "/dyrus" 
+    }
+    var ac = new autoComplete({
+        selector: '#search',
+        minChars: 2,
+        source: function(term, suggest) {
+            term = term.toLowerCase();
+            var options = Object.keys(urlMap);
+            var matches = [];
+            for (i = 0; i < options.length; i ++) {
+                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
+            }
+            suggest(matches);
+        },
+        onSelect: function(e, term, item) {
+            window.location.href = urlMap[term];
+        }
+    });
+</script>
+
+
+            </div>
+            <a href="/about">
+                <div class="col-md-2 col-xs-2 header-button">
+                    ABOUT
+                </div>
+            </a>
+            <a href="/contact">
+                <div class="col-md-2 col-xs-2 header-button">
+                    CONTACT
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="about">
+        <div class="about-inner">
+            <div class="about-content">
+                <div class="gold-title">
+                    ABOUT
+                </div>
+                <hr align="left">
+                <div class="gold-body">
+                    <p>
+                        Summoner’s Rift isn’t just a map. It’s our basketball court, our MMA octagon. It’s a place where relationships are forged, where players refine their game over years, and where the best in the world become legends. In a game with endless character matchups and ever-evolving strategy, SR was League’s only constant for five years. We were hesitant to tinker with such a vital piece of the League puzzle, but we felt excited to take on the challenge.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="row footer-row">
+                <div class="col align-self-center">
+                    © 2017 Museum Artifacts
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
