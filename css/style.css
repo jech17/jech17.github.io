@@ -509,6 +509,14 @@
   background-repeat: no-repeat;
   margin-top: -90px;
 }
+@media (max-width: 1200px) and (min-width: 901px) {
+  .post-container .post-video::before {
+    width: 95%;
+  }
+  .post-container .post-video::after {
+    width: 95%;
+  }
+}
 @media screen and (max-width: 900px) {
   .post-container .post-video::before {
     display: none;
