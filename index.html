@@ -66,12 +66,9 @@
         </div>
         <div class="hamburger-menu hidden">
             <div class="hamburger-row hamburger-search">
-                <div class="search-icon">
-    <img src="/img/magnify.png" />
-</div>
-<div class="search-bar">
-    <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
-</div>
+                <div class="search-bar">
+                    <input id="hamburger-search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+                </div>
             </div>
             <a href="/about">
                 <div class="row hamburger-row header-button-text">
@@ -244,6 +241,23 @@
         }
     });
 
+    var ac2 = new autoComplete({
+        selector: '#hamburger-search',
+        minChars: 2,
+        source: function(term, suggest) {
+            term = term.toLowerCase();
+            var options = Object.keys(urlMap);
+            var matches = [];
+            for (i = 0; i < options.length; i ++) {
+                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
+            }
+            suggest(matches);
+        },
+        onSelect: function(e, term, item) {
+            window.location.href = urlMap[term];
+        }
+    });
+
     var responsiveHeader = 820;
     menu = document.getElementsByClassName("hamburger-menu")[0]
     var $window = $(window);
@@ -252,7 +266,7 @@
     function changeHeader() {
         var width = $window.width();
         if (width <= responsiveHeader) {
-            document.getElementsByClassName("header-title")[0].className = "col-md-5 col-xs-10 header-title"
+            document.getElementsByClassName("header-title")[0].className = "col-md-6 col-xs-10 header-title"
         }
         if (width > responsiveHeader) {
             document.getElementsByClassName("header-title")[0].className = "col-md-5 col-xs-5 header-title"
