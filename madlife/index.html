@@ -11,15 +11,17 @@
         The Madlife
     </title>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Autocomplete -->
     <link href="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.css" rel="stylesheet" />
     <script src="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.min.js"></script>
-
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -40,47 +42,44 @@
                     Museum Artifacts
                 </div>
             </a>
-            <div class="col-md-3 col-xs-3 header-search">
+            <div class="header-hamburger col-xs-2">
+                <input type="image" src="/img/menu.svg" onClick="toggleHamburger()" />
+            </div>
+            <div class="header-expanded col-md-3 col-xs-3 header-search">
                 <div class="search-icon">
     <img src="/img/magnify.png" />
 </div>
 <div class="search-bar">
     <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
 </div>
-<script>
-    var urlMap = {
-        "The Insec": "/insec",
-        "The Madlife": "/madlife",
-        "The xPeke": "/xpeke",
-        "The Dyrus Flash": "/dyrus" 
-    }
-    var ac = new autoComplete({
-        selector: '#search',
-        minChars: 2,
-        source: function(term, suggest) {
-            term = term.toLowerCase();
-            var options = Object.keys(urlMap);
-            var matches = [];
-            for (i = 0; i < options.length; i ++) {
-                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
-            }
-            suggest(matches);
-        },
-        onSelect: function(e, term, item) {
-            window.location.href = urlMap[term];
-        }
-    });
-</script>
-
-
             </div>
             <a href="/about">
-                <div class="col-md-2 col-xs-2 header-button">
+                <div class="header-expanded col-md-2 col-xs-2 header-button">
                     ABOUT
                 </div>
             </a>
             <a href="/contact">
-                <div class="col-md-2 col-xs-2 header-button">
+                <div class="header-expanded col-md-2 col-xs-2 header-button">
+                    CONTACT
+                </div>
+            </a>
+        </div>
+        <div class="hamburger-menu hidden">
+            <div class="hamburger-row hamburger-search">
+                <div class="search-icon">
+    <img src="/img/magnify.png" />
+</div>
+<div class="search-bar">
+    <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+</div>
+            </div>
+            <a href="/about">
+                <div class="row hamburger-row header-button-text">
+                    ABOUT
+                </div>
+            </a>
+            <a href="/contact">
+                <div class="row hamburger-row header-button-text">
                     CONTACT
                 </div>
             </a>
@@ -247,6 +246,58 @@
         </div>
     </div>
 </footer>
+
+    <!-- Scripts -->
+    <script>
+    // Search bar
+    var urlMap = {
+        "The Insec": "/insec",
+        "The Madlife": "/madlife",
+        "The xPeke": "/xpeke",
+        "The Dyrus Flash": "/dyrus" 
+    }
+    var ac = new autoComplete({
+        selector: '#search',
+        minChars: 2,
+        source: function(term, suggest) {
+            term = term.toLowerCase();
+            var options = Object.keys(urlMap);
+            var matches = [];
+            for (i = 0; i < options.length; i ++) {
+                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
+            }
+            suggest(matches);
+        },
+        onSelect: function(e, term, item) {
+            window.location.href = urlMap[term];
+        }
+    });
+
+    var responsiveHeader = 820;
+    menu = document.getElementsByClassName("hamburger-menu")[0]
+    var $window = $(window);
+
+    // Header responsive
+    function changeHeader() {
+        var width = $window.width();
+        if (width <= responsiveHeader) {
+            document.getElementsByClassName("header-title")[0].className = "col-md-5 col-xs-10 header-title"
+        }
+        if (width > responsiveHeader) {
+            document.getElementsByClassName("header-title")[0].className = "col-md-5 col-xs-5 header-title"
+            $(".hamburger-menu").addClass("hidden");
+        }
+    }
+    changeHeader();
+    $window.resize(changeHeader);
+
+    // Hamburger onClick
+    function toggleHamburger() {
+        $(".hamburger-menu").toggleClass("hidden");
+    }
+
+</script>
+
 
 </body>
 
