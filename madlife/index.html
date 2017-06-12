@@ -21,6 +21,9 @@
     <!-- Autocomplete -->
     <link href="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.css" rel="stylesheet" />
     <script src="https://cdn.rawgit.com/Pixabay/JavaScript-autoComplete/master/auto-complete.min.js"></script>
+
+    <!-- Youtube API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -45,14 +48,19 @@
             <div class="header-hamburger col-xs-2">
                 <input type="image" src="/img/menu.svg" onClick="toggleHamburger()" />
             </div>
-            <div class="header-expanded col-md-3 col-xs-3 header-search">
-                <div class="search-icon">
+            <a href="/search">
+                <div class="header-expanded col-md-3 col-xs-3 header-search">
+                    <div class="search-bar">
+                        SEARCH LIST
+                    </div>
+                    <!--<div class="search-icon">
     <img src="/img/magnify.png" />
 </div>
 <div class="search-bar">
     <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
-</div>
-            </div>
+</div>-->
+                </div>
+            </a>
             <a href="/about">
                 <div class="header-expanded col-md-2 col-xs-2 header-button">
                     ABOUT
@@ -65,11 +73,14 @@
             </a>
         </div>
         <div class="hamburger-menu hidden">
-            <div class="hamburger-row hamburger-search">
-                <div class="search-bar">
-                    <input id="hamburger-search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+            <a href="/search">
+                <div class="hamburger-row hamburger-search">
+                    <div class="search-bar">
+                        SEARCH LIST
+                        <!--<input id="hamburger-search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">-->
+                    </div>
                 </div>
-            </div>
+            </a>
             <a href="/about">
                 <div class="row hamburger-row header-button-text">
                     ABOUT
@@ -86,7 +97,7 @@
 
     <!-- Main Content -->
     
-    <article class="white">
+    <article class="black">
 
     <div class="post-container container">
         <div class="row">
@@ -103,16 +114,16 @@
                 <hr>
                 <div class="post-content">
                     <p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p><em>Hong “MadLife” Min-gi</em> received the best support award in 2012 from Korean E-sports Awards for his exceptional and innovative plays on support champions. <em>The Madlife</em> is named after <em>Hong “MadLife” Min-gi</em> for his consistency in landing calculated skill shots by predicting enemy dodge movements. This move is performed on hook champions such as <em>Blitzcrank</em> and <em>Thresh</em>. <em>The Madlife</em> relies on a huge amount of game and player knowledge to succesfully execute and is reverred as one of the coolest plays in the game. </p>
 
                     </p>
                     <blockquote>
                         <div class="post-quote">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            How in the world do you get to be that good. Madlife is God.
                         </div>
                         <br>
                         <div class="post-quote-author">
-                            Marc Merill, Riot Games Cofounder
+                            DoA and MonteCristo, Previews OGN Casters
                         </div>
                     </blockquote>
                 </div>
@@ -126,7 +137,7 @@
                             <div id="video1" class="video tab-pane fade in active">
                         
                             <div class="video-container">
-                                <iframe width="854" height="480" src=https://www.youtube.com/embed/1_5yWtmT-_0?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
+                                <iframe class="youtube" id="yt1" width="854" height="480" src=https://www.youtube.com/embed/BR6aR5du2QY?autoplay=0&showinfo=0&rel=0&enablejsapi=1 frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                         
@@ -135,16 +146,7 @@
                             <div id="video2" class="video tab-pane fade">
                         
                             <div class="video-container">
-                                <iframe width="854" height="480" src=https://www.youtube.com/embed/yw-RPm1uOM4?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        
-                    
-                        
-                            <div id="video3" class="video tab-pane fade">
-                        
-                            <div class="video-container">
-                                <iframe width="854" height="480" src=https://www.youtube.com/embed/CqRFXQJ2ghQ?autoplay=0&showinfo=0&rel=0 frameborder="0" allowfullscreen></iframe>
+                                <iframe class="youtube" id="yt2" width="854" height="480" src=https://www.youtube.com/embed/uzth3cMJMRs?autoplay=0&showinfo=0&rel=0&enablejsapi=1 frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                         
@@ -159,7 +161,7 @@
                             
                                 <li class="page-button active">
                             
-                                <a data-toggle="pill" href="#video1" data-target="#video1, #video1_description">
+                                <a onClick="pillSwitch()" data-toggle="pill" href="#video1" data-target="#video1, #video1_description">
                                     1
                                 </a>
                             </li>
@@ -168,17 +170,8 @@
                             
                                 <li class="page-button">
                             
-                                <a data-toggle="pill" href="#video2" data-target="#video2, #video2_description">
+                                <a onClick="pillSwitch()" data-toggle="pill" href="#video2" data-target="#video2, #video2_description">
                                     2
-                                </a>
-                            </li>
-                            
-                        
-                            
-                                <li class="page-button">
-                            
-                                <a data-toggle="pill" href="#video3" data-target="#video3, #video3_description">
-                                    3
                                 </a>
                             </li>
                             
@@ -191,24 +184,24 @@
                             
                                 <div id="video1_description" class="tab-pane fade in active">
                             
+                            
                             <p>
-                                lhads flasdf laksdfj alsdkjf alsdkfj alsdkjfald kfjalsdk falsdkf jalsdkf jalsdkf jalsdkf jalskdfj alsdkjfalsdk fj lirjghwlirj wlrtwre twer twret wer twer we                            </p>
+                                A montage featuring variations of The Madlife predicting different dodge movements.                             </p>
+                            <br>
+                            <p>
+                                Credit to Fizz Khalifa                            </p>
                             </div>
                             
                         
                             
                                 <div id="video2_description" class="tab-pane fade">
                             
-                            <p>
-                                r tiwjrpoi wrpoijtwpreo itwperoi jtwpreoi tjpwirtpwo rtpj wproti wprtioj wpro tweoieugo thu oiur tgogoru hgoiu rtigouhrt igouerth goiue htrgoier ygoeiru yhgoeir yhgeori yhgoeiru hgoeri hgoeri hygoeit hgoieru hgoeiu g                            </p>
-                            </div>
-                            
-                        
-                            
-                                <div id="video3_description" class="tab-pane fade">
                             
                             <p>
-                                wij4r03 u5340 53409u5 0349 u509345 090459 3095 0394 u509u09u034u5 3054309u4 50439eothe-54hi-45i9j 5y 093i5 y0i345 y0i345 jy03 iy5 30iy5j30iy5j 30i5yj03 iy5j3 0iy59j3 y509ij34y509ij3450y 3y509 ij3509yi 340i95yj3 50y9ij35 0y9i34j5y093i45 y                            </p>
+                                A detailed review on The Madlife with information on its variations and execution.                             </p>
+                            <br>
+                            <p>
+                                Credit to TheRiverSaint                            </p>
                             </div>
                             
                         
@@ -308,6 +301,20 @@
     // Hamburger onClick
     function toggleHamburger() {
         $(".hamburger-menu").toggleClass("hidden");
+    }
+
+    // Nav Pill Switch
+    var players = [];
+    function onYouTubeIframeAPIReady() {
+        $(".youtube").each(function() {
+            players.push(new YT.Player($(this).attr("id")));
+        });
+    }
+    
+    function pillSwitch() {
+        for (var key in players) {
+            players[key].pauseVideo();
+        }
     }
 
 </script>
