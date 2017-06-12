@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Title -->
     <title>
-        The Insec
+        About
     </title>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,14 +37,19 @@
                 <div class="header-hamburger col-xs-2">
                     <input type="image" src="/img/menu.svg" onClick="toggleHamburger()" />
                 </div>
-                <div class="header-expanded col-md-3 col-xs-3 header-search">
-                    <div class="search-icon">
-                        <img src="/img/magnify.png" />
+                <a href="/search">
+                    <div class="header-expanded col-md-3 col-xs-3 header-search">
+                        <div class="search-bar">
+                            SEARCH LIST
+                        </div>
+                        <!--<div class="search-icon">
+                            <img src="/img/magnify.png" />
+                        </div>
+                        <div class="search-bar">
+                            <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+                        </div>-->
                     </div>
-                    <div class="search-bar">
-                        <input id="search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
-                    </div>
-                </div>
+                </a>
                 <a href="/about">
                     <div class="header-expanded col-md-2 col-xs-2 header-button">
                         ABOUT
@@ -57,11 +62,14 @@
                 </a>
             </div>
             <div class="hamburger-menu hidden">
-                <div class="hamburger-row hamburger-search">
-                    <div class="search-bar">
-                        <input id="hamburger-search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">
+                <a href="/search">
+                    <div class="hamburger-row hamburger-search">
+                        <div class="search-bar">
+                            SEARCH LIST
+                            <!--<input id="hamburger-search" type="text" name="search" placeholder="SEARCH" onfocus="this.placeholder = ''" autocomplete="off">-->
+                        </div>
                     </div>
-                </div>
+                </a>
                 <a href="/about">
                     <div class="row hamburger-row header-button-text">
                         ABOUT
