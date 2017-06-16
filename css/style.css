@@ -365,7 +365,7 @@
   fill: #c4b998 !important;
 }
 .home-row .home-inner-second .home-content .post-tiles .post-tile {
-  padding: 20px 0;
+  padding: 20px;
 }
 .home-row .home-inner-second .home-content .post-tiles .post-tile .tile-text {
   display: inline-block;
@@ -395,7 +395,7 @@
   }
 }
 .home-row .home-inner-second .home-content .post-tiles hr {
-  margin: 0 !important;
+  margin: 0 0 0 20px;
 }
 .about {
   display: table;
@@ -543,7 +543,6 @@
 .site-footer .footer-content .footer-row {
   padding-top: 20px;
   height: 100%;
-  width: 100%;
   text-align: center;
 }
 .post-container {
@@ -724,6 +723,11 @@
 }
 .player-info .player-head img {
   max-width: 200px;
+}
+@media screen and (max-width: 530px) {
+  .player-info .player-bio .black-title {
+    font-size: 30px;
+  }
 }
 .player-info .player-bio {
   margin: 50px 0;
