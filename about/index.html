@@ -93,7 +93,7 @@
                 <hr align="left">
                 <div class="gold-body">
                     <p>
-                        League of Legacies is a project made from passion for the game League of Legends and a growing interest in creating a museum of historic game moments. League of Legacies aims to provide the most accurate information about player game moments. I worked on this site independently and will continue to keep it up to date adding new potential legacies.   
+                        League of Legacies is a project made from passion. I've been following League of Legends since its release and wanted to create League of Legacies to highlight its historic game moments. This project is an individual endeavor and will be continually updated with future content.
                     </p>
                 </div>
             </div>
@@ -110,47 +110,6 @@
         </div>
     </footer>
     <script>
-        // Search bar
-        var urlMap = {
-            "The Insec": "/insec",
-            "The Madlife": "/madlife",
-            "The xPeke": "/xpeke",
-            "The Dyrus Flash": "/dyrus"
-        }
-        var ac = new autoComplete({
-            selector: '#search',
-            minChars: 2,
-            source: function (term, suggest) {
-                term = term.toLowerCase();
-                var options = Object.keys(urlMap);
-                var matches = [];
-                for (i = 0; i < options.length; i++) {
-                    if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
-                }
-                suggest(matches);
-            },
-            onSelect: function (e, term, item) {
-                window.location.href = urlMap[term];
-            }
-        });
-
-        var ac2 = new autoComplete({
-            selector: '#hamburger-search',
-            minChars: 2,
-            source: function (term, suggest) {
-                term = term.toLowerCase();
-                var options = Object.keys(urlMap);
-                var matches = [];
-                for (i = 0; i < options.length; i++) {
-                    if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
-                }
-                suggest(matches);
-            },
-            onSelect: function (e, term, item) {
-                window.location.href = urlMap[term];
-            }
-        });
-
         var responsiveHeader = 820;
         menu = document.getElementsByClassName("hamburger-menu")[0]
         var $window = $(window);
@@ -173,6 +132,16 @@
         function toggleHamburger() {
             $(".hamburger-menu").toggleClass("hidden");
         }
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-101154672-1', 'auto');
+    ga('send', 'pageview');
+
     </script>
 </body>
 

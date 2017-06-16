@@ -137,20 +137,6 @@
                 
                 <div class="col-md-6 text-center search-tile">        
                     <div class="tile">
-                        <a href="/insec" class="tile-text">
-                            <div class="tile-title">
-                                The Insec
-                            </div>
-                            <div class="tile-subtitle">
-                                The Legendary Kick
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            
-                
-                <div class="col-md-6 text-center search-tile">        
-                    <div class="tile">
                         <a href="/faker" class="tile-text">
                             <div class="tile-title">
                                 Faker's Zed
@@ -193,6 +179,20 @@
                 
                 <div class="col-md-6 text-center search-tile">        
                     <div class="tile">
+                        <a href="/madlife" class="tile-text">
+                            <div class="tile-title">
+                                The Madlife
+                            </div>
+                            <div class="tile-subtitle">
+                                The Hook from the Future
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            
+                
+                <div class="col-md-6 text-center search-tile">        
+                    <div class="tile">
                         <a href="/misaya" class="tile-text">
                             <div class="tile-title">
                                 The Misaya
@@ -207,12 +207,26 @@
                 
                 <div class="col-md-6 text-center search-tile">        
                     <div class="tile">
-                        <a href="/madlife" class="tile-text">
+                        <a href="/insec" class="tile-text">
                             <div class="tile-title">
-                                The Madlife
+                                The Insec
                             </div>
                             <div class="tile-subtitle">
-                                The Hook from the Future
+                                The Legendary Kick
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            
+                
+                <div class="col-md-6 text-center search-tile">        
+                    <div class="tile">
+                        <a href="/smitevicious" class="tile-text">
+                            <div class="tile-title">
+                                Smitevicious
+                            </div>
+                            <div class="tile-subtitle">
+                                The Smite God
                             </div>
                         </a>
                     </div>
@@ -260,20 +274,6 @@
                     </div>
                 </div>
             
-                
-                <div class="col-md-6 text-center search-tile">        
-                    <div class="tile">
-                        <a href="/smitevicious" class="tile-text">
-                            <div class="tile-title">
-                                Smitevicious
-                            </div>
-                            <div class="tile-subtitle">
-                                The Smite God
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            
         </div>
     </div>
 
@@ -308,47 +308,6 @@
 
     <!-- Scripts -->
     <script>
-    // Search bar
-    var urlMap = {
-        "The Insec": "/insec",
-        "The Madlife": "/madlife",
-        "The xPeke": "/xpeke",
-        "The Dyrus Flash": "/dyrus" 
-    }
-    var ac = new autoComplete({
-        selector: '#search',
-        minChars: 2,
-        source: function(term, suggest) {
-            term = term.toLowerCase();
-            var options = Object.keys(urlMap);
-            var matches = [];
-            for (i = 0; i < options.length; i ++) {
-                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
-            }
-            suggest(matches);
-        },
-        onSelect: function(e, term, item) {
-            window.location.href = urlMap[term];
-        }
-    });
-
-    var ac2 = new autoComplete({
-        selector: '#hamburger-search',
-        minChars: 2,
-        source: function(term, suggest) {
-            term = term.toLowerCase();
-            var options = Object.keys(urlMap);
-            var matches = [];
-            for (i = 0; i < options.length; i ++) {
-                if (~options[i].toLowerCase().indexOf(term)) matches.push(options[i]);
-            }
-            suggest(matches);
-        },
-        onSelect: function(e, term, item) {
-            window.location.href = urlMap[term];
-        }
-    });
-
     var responsiveHeader = 820;
     menu = document.getElementsByClassName("hamburger-menu")[0]
     var $window = $(window);
@@ -387,7 +346,14 @@
     }
 
 </script>
-
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-101154672-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 </body>
 
