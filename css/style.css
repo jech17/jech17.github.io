@@ -290,12 +290,13 @@
   z-index: 1;
   display: table;
   width: 100%;
-  height: calc(100vh - 62px);
 }
 .home-row .home-inner-first {
   display: table-cell;
   vertical-align: middle;
-  background-color: #1c2229;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("/img/landing_bg.jpg");
+  background-size: cover;
+  height: calc(100vh - 62px);
 }
 .home-row .home-inner-first .home-content {
   text-align: center;
@@ -314,6 +315,7 @@
   display: table-cell;
   vertical-align: middle;
   background-color: #fff;
+  padding: 50px 0;
 }
 @media screen and (min-width: 1270px) {
   .home-row .home-inner-second .home-info {
@@ -396,6 +398,38 @@
 }
 .home-row .home-inner-second .home-content .post-tiles hr {
   margin: 0 0 0 20px;
+}
+.home-row .home-inner-third {
+  display: table-cell;
+  vertical-align: middle;
+  background-color: #1c2229;
+  padding: 80px 0;
+  text-align: center;
+}
+.home-row .home-inner-third .game-link {
+  display: inline-block;
+  max-width: 50%;
+}
+.home-row .home-inner-third .game-link img {
+  max-width: 150px;
+  padding: 20px 0;
+}
+@media screen and (max-width: 760px) {
+  .home-row .home-inner-third .game-link {
+    max-width: 100%;
+  }
+}
+.home-row .home-inner-third .home-info {
+  max-width: 50%;
+  text-align: left;
+  display: inline-block;
+  padding: 0 50px;
+  vertical-align: middle;
+}
+@media screen and (max-width: 760px) {
+  .home-row .home-inner-third .home-info {
+    max-width: 100%;
+  }
 }
 .about {
   display: table;
@@ -538,12 +572,16 @@
 }
 .site-footer .footer-content {
   width: 100%;
-  height: 60px;
 }
 .site-footer .footer-content .footer-row {
+  text-transform: None;
   padding-top: 20px;
   height: 100%;
   text-align: center;
+}
+.site-footer .footer-content .footer-row .endorse {
+  padding: 30px;
+  font-size: 10px;
 }
 .post-container {
   padding-top: 80px;
