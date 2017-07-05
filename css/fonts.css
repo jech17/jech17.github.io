@@ -1,16 +1,1 @@
-@font-face {
-  font-family: Beaufort;
-  font-weight: 400;
-  src: url("../fonts/Beaufort-Regular.woff2"), url("../fonts/Beaufort-Regular.woff"), url("../fonts/Beaufort-Regular.ttf");
-}
-@font-face {
-  font-family: Beaufort;
-  font-style: italic;
-  font-weight: 400;
-  src: url("../fonts/Beaufort-Italic.woff2"), url("../fonts/Beaufort-Italic.woff"), url("../fonts/Beaufort-Italic.ttf");
-}
-@font-face {
-  font-family: Beaufort;
-  font-weight: 700;
-  src: url("../fonts/Beaufort-Bold.woff2"), url("../fonts/Beaufort-Bold.woff"), url("../fonts/Beaufort-Bold.ttf");
-}
+@font-face{font-family:Beaufort;font-weight:400;src:url(../fonts/Beaufort-Regular.woff2),url(../fonts/Beaufort-Regular.woff),url(../fonts/Beaufort-Regular.ttf)}@font-face{font-family:Beaufort;font-style:italic;font-weight:400;src:url(../fonts/Beaufort-Italic.woff2),url(../fonts/Beaufort-Italic.woff),url(../fonts/Beaufort-Italic.ttf)}@font-face{font-family:Beaufort;font-weight:700;src:url(../fonts/Beaufort-Bold.woff2),url(../fonts/Beaufort-Bold.woff),url(../fonts/Beaufort-Bold.ttf)}
